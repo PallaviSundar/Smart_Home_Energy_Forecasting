@@ -1,0 +1,115 @@
+# ⚡ Energy Consumption Forecasting in Smart Homes
+
+## Project Overview
+This project implements a **smart home energy consumption forecasting system** using **Deep Learning (LSTM)**. The goal is to predict electricity usage (daily/hourly) based on historical consumption data, enabling homeowners to monitor and optimize energy usage.
+
+The web-based dashboard allows users to:
+- Upload energy consumption datasets (CSV, TXT, or ZIP containing CSV/TXT).
+- Visualize historical energy usage.
+- Forecast future consumption using an LSTM-inspired simulation.
+- Display key error metrics: MAE, RMSE, MAPE.
+- Download forecast results as CSV.
+
+---
+
+## Domain
+- **Domain:** Deep Learning, Smart Home Energy Management
+- **Application:** Energy consumption forecasting and visualization
+
+---
+
+## Goal
+- Develop an interactive **dashboard** to forecast household energy consumption.
+- Use **historical electricity usage** to predict future consumption patterns.
+- Help homeowners analyze consumption trends and plan energy-saving strategies.
+
+---
+
+## Features
+1. **Data Upload & Parsing**
+   - Supports `.csv`, `.txt`, and `.zip` files containing CSV/TXT.
+   - Automatically parses columns like `DateTime` and `Global_active_power`.
+   - Aggregates readings to **hourly values**.
+
+2. **Sample Data Generation**
+   - Generate sample datasets with realistic daily and weekly consumption patterns.
+
+3. **Forecasting**
+   - Predict future energy usage using **simulated LSTM logic**.
+   - Customizable horizon (hours) and backtesting period.
+   - Backtesting metrics include:
+     - **MAE:** Mean Absolute Error
+     - **RMSE:** Root Mean Squared Error
+     - **MAPE:** Mean Absolute Percentage Error
+
+4. **Visualization**
+   - Interactive line chart showing **historical vs forecasted consumption**.
+   - Tooltips explain each KPI.
+   
+5. **Download Forecast**
+   - Export predictions as CSV for further analysis.
+
+---
+
+## Technology Stack
+- **Frontend:** HTML, CSS, JavaScript
+  - Chart.js for plotting
+  - PapaParse for CSV parsing
+  - Day.js for datetime handling
+  - JSZip for ZIP file extraction
+- **Backend:** Python, Flask
+  - Pandas for data processing
+  - Flask for file upload and API endpoints
+
+---
+
+## File Structure
+
+├── app.py # Flask backend
+├── templates/
+│ └── index.html # Dashboard frontend
+├── static/ # Optional: CSS/JS if separated
+├── README.md # Project documentation
+
+
+---
+
+## How to Run
+1. **Clone the repository**
+```bash
+git clone <repo-url>
+cd <project-folder>
+
+2. Install dependencies
+pip install flask pandas
+
+3. Run Flask server
+python app.py
+
+4. Access the dashboard
+Open your browser at http://127.0.0.1:5000
+
+5. Upload dataset or use sample data
+
+Upload CSV, TXT, or ZIP containing electricity consumption data.
+
+Adjust parameters (horizon, backtest, days to load).
+
+Click Run Forecast to generate predictions.
+
+Download forecast as CSV if needed.
+
+# Dataset
+
+Kaggle Household Electric Power Consumption 
+UCI Household Power Consumption dataset
+
+Dataset Link
+[Download here](https://www.kaggle.com/datasets/uciml/electric-power-consumption-data-set)
+[Download here](https://archive.ics.uci.edu/ml/datasets/individual+household+electric+power+consumption)
+
+Columns used:
+
+DateTime / datetime
+
+Global_active_power / global_active_power
